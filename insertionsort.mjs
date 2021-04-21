@@ -4,7 +4,7 @@ import {generateList} from "./generateList.mjs";
 // WITH FIND INDEX
 ///////////////////////////////////////////////////////////////////////////////////////
 function insertSort(elements) {
-    console.log(`before insert sort: ${elements}`);
+    // console.log(`before insert sort: ${elements}`);
     
     let numberOfElements = elements.length;
     let start = performance.now();
@@ -20,17 +20,17 @@ function insertSort(elements) {
             }
         }
     }
-    console.log(elements)
+    // console.log(elements)
 
     let end = performance.now();
-    console.log(`it took: ${end-start} milliseconds`);
+    console.log(`insertSort: ${end-start} milliseconds`);
 }
 
 
 // WITH SLICE AND FIND INDEX
 ///////////////////////////////////////////////////////////////////////////////////////
 function insertSortSlice(elements) {
-    console.log(`before insert sort: ${elements}`);
+    // console.log(`before insert sort: ${elements}`);
     
     let numberOfElements = elements.length;
     let start = performance.now();
@@ -45,10 +45,10 @@ function insertSortSlice(elements) {
             elements.splice(i + 1, 1);
         }
     }
-    console.log(elements)
+    // console.log(elements)
 
     let end = performance.now();
-    console.log(`it took: ${end-start} milliseconds`);
+    console.log(`insertSortSlice: ${end-start} milliseconds`);
 }
 
 
@@ -61,7 +61,7 @@ function findIndexForLoop(endIndex, array){
 }
 
 function insertSortFor(elements) {
-    console.log(`before insert sort: ${elements}`);
+    // console.log(`before insert sort: ${elements}`);
     
     let numberOfElements = elements.length;
     let start = performance.now();
@@ -74,13 +74,36 @@ function insertSortFor(elements) {
             elements.splice(i + 1, 1);
         }
     }
-    console.log(elements)
+    // console.log(elements)
 
     let end = performance.now();
-    console.log(`it took: ${end-start} milliseconds`);
+    console.log(`insertSortFor: ${end-start} milliseconds`);
 }
 
 
-// insertSort(generateList(10));
-// insertSortSlice(generateList(5));
-insertSortFor(generateList(10));
+// PROPER INSERTION SORT
+///////////////////////////////////////////////////////////////////////////////////////
+function insertSortProper(elements) {
+    // console.log(`before insert sort: ${elements}`);
+    
+    let numberOfElements = elements.length;
+    let start = performance.now();
+    for (let i = 1; i < numberOfElements; i++) {
+        let j = i - 1;
+        const current = elements[i];
+
+        while ((j >= 0) && (elements[j] > current)) {
+            elements[j + 1] = elements[j];
+            j--;
+        }
+        elements[j + 1] = current;
+    }
+    // console.log(elements)
+
+    let end = performance.now();
+    console.log(`insertSortProper: ${end-start} milliseconds`);
+}
+// insertSort(generateList(50000));
+// insertSortSlice(generateList(50000));
+// insertSortFor(generateList(50000));
+// insertSortProper(generateList(50000));
