@@ -3,11 +3,11 @@ import {generateList} from "./generateList.mjs";
 
 // SORTING WITH NORMAL SUBSTITUTION
 /////////////////////////////////////////////////////////////////////////////////
-function bubbleSort(elements) {
+export function bubbleSort(elements) {
     // console.log(`before bubble sort: ${elements}`);
 
     let numberOfElements = elements.length;
-    let start = performance.now();
+    // let start = performance.now();
 
     for (let i = 0; i < numberOfElements; i++) {
         for (let j = 0; j < numberOfElements - 1; j++) {
@@ -18,9 +18,9 @@ function bubbleSort(elements) {
             }
         }
     }
-    let end = performance.now();
+    // let end = performance.now();
     // console.log(`after bubble sort: ${elements}`);
-    console.log(`it took: ${end-start} milliseconds`);
+    // console.log(`it took: ${end-start} milliseconds`);
 }
 
 
@@ -98,9 +98,9 @@ function bubbleSortDestruct(elements) {
     console.log(`it took: ${end-start} milliseconds`);
 }
 
-let list = generateList(5)
-bubbleSort(list)
-bubbleSortDestruct(list)
-bubbleSortSplice(list)
-bubbleSortWhile(list)
+// let list = generateList(5)
+// bubbleSort(list)
+// bubbleSortDestruct(list)
+// bubbleSortSplice(list)
+// bubbleSortWhile(list)
 

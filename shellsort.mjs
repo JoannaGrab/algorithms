@@ -25,7 +25,7 @@ function shellSort(elements, gaps) {
     });
     console.log(`after: ${elements}`);
 }
-shellSort([62,83,18,53,7,17,95,86,47,69,25,28], gaps);
+shellSort([62,83,18,53,7,17,95,86,47,69,25,28], gaps);  
 
 /*
                     a1 	a2 	a3 	a4 	a5 	a6 	a7 	a8 	a9 	a10 a11 a12
