@@ -1,5 +1,6 @@
 import { bubbleSort } from "./bubblesort.mjs";
 import { heapSort } from "./heapsort.mjs";
+import { quickSort } from "./quicksort.mjs";
 import { performance } from "perf_hooks";
 import { generateList } from "./generateList.mjs";
 
